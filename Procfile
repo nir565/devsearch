@@ -1,1 +1,1 @@
-web:gunicorn sharing.wsgi --log-file -
+web: waitress-server --port=8000 sharing.wsgi:application
