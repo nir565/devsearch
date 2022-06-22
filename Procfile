@@ -1,0 +1,1 @@
+web:gunicorn sharing.wsgi --log-file -

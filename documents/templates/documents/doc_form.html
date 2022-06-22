@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Create-New-Project</h1>
+<!-- enctype is used for submitting img -->
+<main class="formPage my-xl">
+    <div class="content-box">
+        <div class="formWrapper">
+            <a class="backButton" href="{% url 'account' %}"><i class="im im-angle-left"></i></a>
+            <br>
+
+            <form class="form" method="POST" enctype="multipart/form-data">
+                {% csrf_token%}
+                <!-- Input:Text -->
+                {% for field in form %}
+                <div class="form__field">
+                    
+                    <label for="formInput#text">{{ field.label }} </label>
+                    {{field}}
+                </div>
+                
+                {% endfor %}
+
+                <div class="form__field">
+                    
+                    <label for="formInput#text">Tags </label>
+                    <textarea class="input" name="newtags" placeholder="Add Tags here...."></textarea>
+                    {{field}}
+                </div>
+
+
+
+
+
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock content %}
+
+
+
